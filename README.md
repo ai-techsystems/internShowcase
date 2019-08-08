@@ -1,6 +1,6 @@
 # AITS associates project submission guidelines
 
-# Steps to submit your project
+## Steps to submit your project
 1. Open your browser and go to https://github.com/ai-techsystems/internShowcase.git
 2. Click on Fork button.
 3. Type following command in a terminal
@@ -24,6 +24,6 @@ git push origin <your_name>
 
 open browser with https://github.com/ai-techsystems/internShowcase and click on green button with "compare & pull request", press the button, fill in the details and click "Create pull request".
 
-# Instructional Video with Steps
+## Instructional Video with Steps
  
  [<img src="https://img.youtube.com/vi/Ogvm-S2HQW0/maxresdefault.jpg" width="70%">](https://youtu.be/Ogvm-S2HQW0)
