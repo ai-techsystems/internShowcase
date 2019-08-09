@@ -4,6 +4,7 @@
 1. Open your browser and go to https://github.com/ai-techsystems/internShowcase.git
 2. Click on Fork button.
 3. Type following command in a terminal
+4. Download IEEE template https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/Conference-template-A4.doc
 ```
 git clone <forked_repository_url>
 cd internShowcase
