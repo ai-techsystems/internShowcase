@@ -1,0 +1,137 @@
+{
+  "links" : {
+    "next" : "https://api.nasa.gov/neo/rest/v1/feed?start_date=1996-08-16&end_date=1996-08-16&detailed=true&api_key=t0TVs3DtDT2H8Oy2Zy8m2eVrNsAVKAexjcZXUckd",
+    "prev" : "https://api.nasa.gov/neo/rest/v1/feed?start_date=1996-08-14&end_date=1996-08-14&detailed=true&api_key=t0TVs3DtDT2H8Oy2Zy8m2eVrNsAVKAexjcZXUckd",
+    "self" : "https://api.nasa.gov/neo/rest/v1/feed?start_date=1996-08-15&end_date=1996-08-15&detailed=true&api_key=t0TVs3DtDT2H8Oy2Zy8m2eVrNsAVKAexjcZXUckd"
+  },
+  "element_count" : 2,
+  "near_earth_objects" : {
+    "1996-08-15" : [ {
+      "links" : {
+        "self" : "https://api.nasa.gov/neo/rest/v1/neo/2373503?api_key=t0TVs3DtDT2H8Oy2Zy8m2eVrNsAVKAexjcZXUckd"
+      },
+      "neo_reference_id" : "2373503",
+      "name" : "373503 (2001 CK42)",
+      "nasa_jpl_url" : "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2373503",
+      "absolute_magnitude_h" : 20.0,
+      "estimated_diameter" : {
+        "kilometers" : {
+          "estimated_diameter_min" : 0.2658,
+          "estimated_diameter_max" : 0.5943468684
+        },
+        "meters" : {
+          "estimated_diameter_min" : 265.8,
+          "estimated_diameter_max" : 594.3468684194
+        },
+        "miles" : {
+          "estimated_diameter_min" : 0.1651604118,
+          "estimated_diameter_max" : 0.369309908
+        },
+        "feet" : {
+          "estimated_diameter_min" : 872.047272,
+          "estimated_diameter_max" : 1949.9569797852
+        }
+      },
+      "is_potentially_hazardous_asteroid" : false,
+      "close_approach_data" : [ {
+        "close_approach_date" : "1996-08-15",
+        "epoch_date_close_approach" : 840092400000,
+        "relative_velocity" : {
+          "kilometers_per_second" : "6.7621494389",
+          "kilometers_per_hour" : "24343.7379798999",
+          "miles_per_hour" : "15126.2520797883"
+        },
+        "miss_distance" : {
+          "astronomical" : "0.4619226369",
+          "lunar" : "179.6879119873",
+          "kilometers" : "69102648",
+          "miles" : "42938392"
+        },
+        "orbiting_body" : "Earth"
+      } ],
+      "orbital_data" : {
+        "orbit_id" : "45",
+        "orbit_determination_date" : "2017-04-06 09:22:28",
+        "orbit_uncertainty" : "0",
+        "minimum_orbit_intersection" : ".0620336",
+        "jupiter_tisserand_invariant" : "4.648",
+        "epoch_osculation" : "2458000.5",
+        "eccentricity" : ".2808904405078158",
+        "semi_major_axis" : "1.421120771814414",
+        "inclination" : "10.27271325075863",
+        "ascending_node_longitude" : "6.009984844674355",
+        "orbital_period" : "618.7923100210946",
+        "perihelion_distance" : "1.021941532204656",
+        "perihelion_argument" : "220.0319072667421",
+        "aphelion_distance" : "1.820300011424172",
+        "perihelion_time" : "2458228.108092832494",
+        "mean_anomaly" : "227.5825279455968",
+        "mean_motion" : ".5817783999088929",
+        "equinox" : "J2000"
+      }
+    }, {
+      "links" : {
+        "self" : "https://api.nasa.gov/neo/rest/v1/neo/3685273?api_key=t0TVs3DtDT2H8Oy2Zy8m2eVrNsAVKAexjcZXUckd"
+      },
+      "neo_reference_id" : "3685273",
+      "name" : "(2014 RC)",
+      "nasa_jpl_url" : "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=3685273",
+      "absolute_magnitude_h" : 26.8,
+      "estimated_diameter" : {
+        "kilometers" : {
+          "estimated_diameter_min" : 0.0116025908,
+          "estimated_diameter_max" : 0.0259441818
+        },
+        "meters" : {
+          "estimated_diameter_min" : 11.6025908209,
+          "estimated_diameter_max" : 25.9441817907
+        },
+        "miles" : {
+          "estimated_diameter_min" : 0.0072095135,
+          "estimated_diameter_max" : 0.0161209622
+        },
+        "feet" : {
+          "estimated_diameter_min" : 38.066244069,
+          "estimated_diameter_max" : 85.1187093863
+        }
+      },
+      "is_potentially_hazardous_asteroid" : false,
+      "close_approach_data" : [ {
+        "close_approach_date" : "1996-08-15",
+        "epoch_date_close_approach" : 840092400000,
+        "relative_velocity" : {
+          "kilometers_per_second" : "20.4561357453",
+          "kilometers_per_hour" : "73642.0886831574",
+          "miles_per_hour" : "45758.3300487097"
+        },
+        "miss_distance" : {
+          "astronomical" : "0.3549830774",
+          "lunar" : "138.0884246826",
+          "kilometers" : "53104716",
+          "miles" : "32997740"
+        },
+        "orbiting_body" : "Earth"
+      } ],
+      "orbital_data" : {
+        "orbit_id" : "23",
+        "orbit_determination_date" : "2017-04-06 08:38:48",
+        "orbit_uncertainty" : "3",
+        "minimum_orbit_intersection" : ".000354709",
+        "jupiter_tisserand_invariant" : "4.893",
+        "epoch_osculation" : "2458000.5",
+        "eccentricity" : ".3749962421694459",
+        "semi_major_axis" : "1.312557752677499",
+        "inclination" : "4.575085364693328",
+        "ascending_node_longitude" : "344.9891163174",
+        "orbital_period" : "549.2575800369494",
+        "perihelion_distance" : ".8203535277930637",
+        "perihelion_argument" : "71.17014087716987",
+        "aphelion_distance" : "1.804761977561934",
+        "perihelion_time" : "2458059.423768174639",
+        "mean_anomaly" : "321.3795834343461",
+        "mean_motion" : ".6554301899225172",
+        "equinox" : "J2000"
+      }
+    } ]
+  }
+}
