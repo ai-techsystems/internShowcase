@@ -10,8 +10,9 @@ cd internShowcase
 
 git checkout -b <your_name>
 mkdir <your_email_address>
-cd <your_email_address>
-cp <your_project_path> .
+cp -Rp <your_source_code> .
+cp -p <your_IEEE_formatted_report>.pdf .
+# Download IEEE template https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/Conference-template-A4.doc
 
 git add .
 git commit -am "<your_name> submission: <your_project_title>"
