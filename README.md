@@ -19,11 +19,11 @@ git add .
 git commit -am "<your_name> submission: <your_project_title>"
 git push origin <your_name>
 ```
-4. Mention your AITS affiliation as author with url ai-techsystems.com in notebook and paper.
-5. go to <forked_repository_url> in a web browser
-6. Select green button "Compare & pull request"
-7. Add project statement in the comment section.
-8. Create pull request
+5. Mention your AITS affiliation as author with url ai-techsystems.com in notebook and paper.
+6. go to <forked_repository_url> in a web browser
+7. Select green button "Compare & pull request"
+8. Add project statement in the comment section.
+9. Create pull request
 
 open browser with https://github.com/ai-techsystems/internShowcase and click on green button with "compare & pull request", press the button, fill in the details and click "Create pull request".
 
