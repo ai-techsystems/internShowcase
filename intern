@@ -1,0 +1,166 @@
+library(ggplot2)
+scatter <- ggplot(data=iris, aes(x = Sepal.Length, y = Sepal.Width)) 
+scatter + geom_point(aes(color=Species, shape=Species)) +
+   theme_bw()+
+  xlab("Sepal Length") +  ylab("Sepal Width") +
+  ggtitle("Sepal Length-Width")
+
+ggplot(data=iris, aes(Sepal.Length, fill = Species))+ 
+    theme_bw()+
+    geom_density(alpha=0.25)+
+    labs(x = "Sepal.Length", title="Species vs Sepal Length")
+```{r}
+vol <- ggplot(data=iris, aes(x = Sepal.Length))
+vol + stat_density(aes(ymax = ..density..,  ymin = -..density.., 
+                       fill = Species, color = Species), 
+                   geom = "ribbon", position = "identity") +
+  facet_grid(. ~ Species) + coord_flip() + theme_bw()+labs(x = "Sepal Length", title="Species vs Sepal Length")
+
+vol <- ggplot(data=iris, aes(x = Sepal.Width))
+vol + stat_density(aes(ymax = ..density..,  ymin = -..density.., 
+                       fill = Species, color = Species), 
+                   geom = "ribbon", position = "identity") +
+  facet_grid(. ~ Species) + coord_flip() + theme_bw()+labs(x = "Sepal Width", title="Species vs Sepal Width")
+
+
+
+irisData <- iris[,1:4]
+totalwSS<-c()
+
+# kmeans clustering for 15 times in a loop
+for (i in 1:15)
+{
+  clusterIRIS <- kmeans(irisData, centers=i)    
+  totalwSS[i]<-clusterIRIS$tot.withinss      
+}
+
+# Scree plot - Use plot function to plot values of tot_wss against no-of-clusters
+plot(x=1:15,                         # x= No of clusters, 1 to 15
+     y=totalwSS,                      # tot_wss for each
+     type="b",                       # Draw both points as also connect them
+     xlab="Number of Clusters",
+     ylab="Within groups sum-of-squares")
+
+```
+
+
+## Clustering Data :: Method-2
+### Using NbClust - Uses huge no of cluster suitability measuring critera
+
+```{r}
+
+library(NbClust)
+
+# Set margins as: c(bottom, left, top, right)
+par(mar = c(2,2,2,2))    
+
+# NbClust measures appropirateness of cluster on a number of indices.
+# By default, it checks from 2 clusters to 15 clusters
+nb <- NbClust(irisData, method = "kmeans")  # Takes time
+
+#  Draw a histogram denoting how various indices have voted for number of clusters. 
+#  Out of 26 indicies, most (10) voted for 2 clusters, eight voted
+#  for 3 clusters and remaining eight (26-10-8) for other no of clusters
+#  Histogram, breaks =15 as our algorithm checks from 2 to 15 clusters
+hist(nb$Best.nc[1,], breaks = 15, main="Histogram for Number of Clusters")  
+
+```
+
+
+
+library(vegan)    
+
+modelData <- cascadeKM(irisData, 1, 10, iter = 100)  # Test for clusters 1 to 10
+
+# 3.4
+# sortg = TRUE: sorts the iris objects (rows) as a function of their
+#               group membership
+#  Group membership is indicated by color in the heatmap
+#   Sorting is done to produce a more easily interpretable graph. 
+#    Two figures get plotted. one is a heatmap,
+#      other is cluster-no vs values (=BC/WC)
+
+plot(modelData, sortg = TRUE)
+
+modelData$results[2,]   # Groups against BC/WC values
+
+# So which of these values is maximum? BC/WC should be as large as possible
+which.max(modelData$results[2,])
+
+```
+
+## Clustering Data with Silhoutte plot :: Method-4
+### Try with 2 Clusters first ---
+```{r}
+
+library(cluster)	# For silhoutte()
+
+cl <- kmeans(iris[,-5], 2)
+
+# Compute and returns the distance matrix computed by using euclidean distance measure to compute 
+# the distances between the rows of a data matrix.
+
+dis <- dist(iris[,-5])^2
+
+# Get silhoutte coefficient
+sil = silhouette (cl$cluster, dis)
+plot(sil, main = "Clustering Data with Silhoutte plot using 2 Clusters", col = c("cyan", "blue"))
+
+```
+
+### Try with 8 Clusters ---
+```{r}
+
+library(cluster)	# For silhoutte()
+
+cl <- kmeans(iris[,-5], 8)
+
+# Compute and returns the distance matrix computed by using euclidean distance measure to compute 
+# the distances between the rows of a data matrix.
+
+dis <- dist(iris[,-5])^2
+
+# Get silhoutte coefficient
+sil = silhouette (cl$cluster, dis)
+plot(sil, main = "Clustering Data with Silhoutte plot using 8 Clusters", col = c("cyan", "blue", "orange", "yellow", "red", "gray", "green", "maroon"))
+
+```
+
+## Analyze Clustering Tendency
+### Calculate Hopkin's statistic for iris and random dataset
+```{r}
+
+library(factoextra)     # get_clust_tendency() assesses hopkins stat
+library(clustertend)    # Another package for hopkins() function
+
+
+# 1. Given a vector of numbers or a column of a dataframe
+#     Generate uniform random numbers as per its min and max values
+genx<-function(x){
+  runif(length(x), min(x), (max(x)))
+}
+
+# 2. Generate random data by applying function over each column
+random_df <- apply(iris[,-5], 2, genx)  
+random_df <- as.data.frame(random_df)
+
+# 3. Standardize both data sets
+iris[,-5] <- scale(iris[,-5])   # By default, center = T, scale = T
+random_df <- scale(random_df)
+
+# 4. Compute Hopkins statistic for iris dataset
+res <- get_clust_tendency(iris[,-5],
+                          n = nrow(iris) -1 ,  
+                          graph = FALSE)
+# 4.1
+res$hopkins_stat
+
+# 4.2 Also calculate using function, hopkins(), # of clustertend package
+hopkins(iris[,-5], n = nrow(iris) -1)    
+
+# 5. Compute Hopkins statistic for a random dataset
+res <- get_clust_tendency(random_df, n = nrow(random_df)-1,
+                          graph = FALSE)
+# 5.2
+res$hopkins_stat
+```
