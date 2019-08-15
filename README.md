@@ -1,7 +1,7 @@
-# AITS associates project submission guidelines
+# AITS associates project
+Make sure, you put your best work forward. Some of these papers will have chance to be featured in [AITS Summit 2019](http://ai-techsystems.com/summit)
 
-
-## AITS Summit Peer Review Committee 
+## AITS Peer Review Committee 
 1. Atharva Joshi
 2. Shivangi Srivastava
 3. Suyash Chaudhary
