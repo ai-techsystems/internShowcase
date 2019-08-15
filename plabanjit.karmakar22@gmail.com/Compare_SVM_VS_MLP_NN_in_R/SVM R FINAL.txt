@@ -1,0 +1,83 @@
+setwd("C:\\Users\\dell\\Desktop\\AITS")
+
+train <- read.csv("train.csv")
+test <- read.csv("test.csv")
+head(train)
+head(test)
+
+# columns not required
+train$PassengerId <- NULL
+train$Name<- NULL
+train$Cabin<- NULL
+
+test$PassengerId <- NULL
+test$Name<- NULL
+test$Cabin<- NULL
+
+
+sapply(train, function(x) sum(is.na(x)))
+sapply(train, function(x) sum(is.na(x))/length(x))
+
+
+sapply(test, function(x) sum(is.na(x)))
+sapply(test, function(x) sum(is.na(x))/length(x))
+
+
+sapply(train, function(x) length(unique(x)))
+sapply(test, function(x) length(unique(x)))
+
+# taking only the required variables
+
+head(train)
+head(test)
+
+train = subset(train, select = c(1:6,8,9))
+test = subset(test, select = c(1:6,8,9))
+
+train[is.na(train$Age)==TRUE,"Age"] <- mean(train$Age,na.rm=TRUE)
+test[is.na(test$Age)==TRUE,"Age"] <- mean(test$Age,na.rm=TRUE)
+
+train <- na.omit(train)
+
+test <- na.omit(test)
+
+##############
+
+head(train)
+head(test)
+
+train$SibSp <- as.factor(train$SibSp)
+train$Parch<- as.factor(train$Parch)
+train$Pclass<- as.factor(train$Pclass)
+train$Survived<- as.factor(train$Survived)
+
+
+test$SibSp <- as.factor(test$SibSp)
+test$Parch<- as.factor(test$Parch)
+test$Pclass<- as.factor(test$Pclass)
+test$Survived<- as.factor(test$Survived)
+
+
+
+## the best one
+library(kernlab)
+svm.model <- ksvm(Survived ~ ., data = train, kernel = 'vanilladot')
+svm.model
+svm_test.predict <- predict(svm.model, test[,2:8])
+head(svm_test.predict)
+
+svm_train.predict <- predict(svm.model, train[,2:8])
+head(svm_train.predict)
+
+data_train <- table(svm_train.predict,train$Survived)
+data_train
+
+data_test <- table(svm_test.predict,test$Survived)
+data_test
+
+accuracy_test <- sum(diag(data_test))/sum(data_test)
+accuracy_test
+
+accuracy_train  <- sum(diag(data_train ))/sum(data_train )
+accuracy_train 
+
