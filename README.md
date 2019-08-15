@@ -1,5 +1,11 @@
 # AITS associates project submission guidelines
 
+
+## AITS Summit Peer Review Committee 
+1. Atharva Joshi
+2. Shivangi Srivastava
+3. Suyash Chaudhary
+
 ## Steps to submit your project
 1. Open your browser and go to https://github.com/ai-techsystems/internShowcase.git
 2. Click on Fork button.
