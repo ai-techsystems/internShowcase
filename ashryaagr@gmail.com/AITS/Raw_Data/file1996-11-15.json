@@ -1,0 +1,74 @@
+{
+  "links" : {
+    "next" : "https://api.nasa.gov/neo/rest/v1/feed?start_date=1996-11-16&end_date=1996-11-16&detailed=true&api_key=t0TVs3DtDT2H8Oy2Zy8m2eVrNsAVKAexjcZXUckd",
+    "prev" : "https://api.nasa.gov/neo/rest/v1/feed?start_date=1996-11-14&end_date=1996-11-14&detailed=true&api_key=t0TVs3DtDT2H8Oy2Zy8m2eVrNsAVKAexjcZXUckd",
+    "self" : "https://api.nasa.gov/neo/rest/v1/feed?start_date=1996-11-15&end_date=1996-11-15&detailed=true&api_key=t0TVs3DtDT2H8Oy2Zy8m2eVrNsAVKAexjcZXUckd"
+  },
+  "element_count" : 1,
+  "near_earth_objects" : {
+    "1996-11-15" : [ {
+      "links" : {
+        "self" : "https://api.nasa.gov/neo/rest/v1/neo/2003362?api_key=t0TVs3DtDT2H8Oy2Zy8m2eVrNsAVKAexjcZXUckd"
+      },
+      "neo_reference_id" : "2003362",
+      "name" : "3362 Khufu (1984 QA)",
+      "nasa_jpl_url" : "http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2003362",
+      "absolute_magnitude_h" : 18.3,
+      "estimated_diameter" : {
+        "kilometers" : {
+          "estimated_diameter_min" : 0.5815070396,
+          "estimated_diameter_max" : 1.30028927
+        },
+        "meters" : {
+          "estimated_diameter_min" : 581.5070396458,
+          "estimated_diameter_max" : 1300.2892700427
+        },
+        "miles" : {
+          "estimated_diameter_min" : 0.3613316107,
+          "estimated_diameter_max" : 0.807962044
+        },
+        "feet" : {
+          "estimated_diameter_min" : 1907.8315559515,
+          "estimated_diameter_max" : 4266.0410487267
+        }
+      },
+      "is_potentially_hazardous_asteroid" : true,
+      "close_approach_data" : [ {
+        "close_approach_date" : "1996-11-15",
+        "epoch_date_close_approach" : 848044800000,
+        "relative_velocity" : {
+          "kilometers_per_second" : "11.2416326086",
+          "kilometers_per_hour" : "40469.8773908664",
+          "miles_per_hour" : "25146.4079821192"
+        },
+        "miss_distance" : {
+          "astronomical" : "0.4450184079",
+          "lunar" : "173.1121673584",
+          "kilometers" : "66573808",
+          "miles" : "41367044"
+        },
+        "orbiting_body" : "Earth"
+      } ],
+      "orbital_data" : {
+        "orbit_id" : "23",
+        "orbit_determination_date" : "2017-04-06 09:30:43",
+        "orbit_uncertainty" : "1",
+        "minimum_orbit_intersection" : ".013395",
+        "jupiter_tisserand_invariant" : "6.017",
+        "epoch_osculation" : "2458000.5",
+        "eccentricity" : ".4685677328906181",
+        "semi_major_axis" : ".9895267061027037",
+        "inclination" : "9.91682854015037",
+        "ascending_node_longitude" : "152.4478065215989",
+        "orbital_period" : "359.5337847595645",
+        "perihelion_distance" : ".5258664207894388",
+        "perihelion_argument" : "55.04820444943432",
+        "aphelion_distance" : "1.453186991415969",
+        "perihelion_time" : "2458083.859959691524",
+        "mean_anomaly" : "276.5319456445037",
+        "mean_motion" : "1.001296721643968",
+        "equinox" : "J2000"
+      }
+    } ]
+  }
+}
