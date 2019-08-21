@@ -1,9 +1,0 @@
-{
-  "links" : {
-    "next" : "https://api.nasa.gov/neo/rest/v1/feed?start_date=1998-07-23&end_date=1998-07-23&detailed=true&api_key=t0TVs3DtDT2H8Oy2Zy8m2eVrNsAVKAexjcZXUckd",
-    "prev" : "https://api.nasa.gov/neo/rest/v1/feed?start_date=1998-07-21&end_date=1998-07-21&detailed=true&api_key=t0TVs3DtDT2H8Oy2Zy8m2eVrNsAVKAexjcZXUckd",
-    "self" : "https://api.nasa.gov/neo/rest/v1/feed?start_date=1998-07-22&end_date=1998-07-22&detailed=true&api_key=t0TVs3DtDT2H8Oy2Zy8m2eVrNsAVKAexjcZXUckd"
-  },
-  "element_count" : 0,
-  "near_earth_objects" : { }
-}
