@@ -5,6 +5,7 @@ Make sure, you put your best work forward. Some of these papers will have chance
 1. Atharva Joshi
 2. Shivangi Srivastava
 3. Suyash Chaudhary
+4. Harsh Bansal
 
 ## Steps to submit your project
 1. Open your browser and go to https://github.com/ai-techsystems/internShowcase.git
